@@ -1,0 +1,52 @@
+{
+    "data": [
+        {
+            "company_name": "Infosys",
+            "position": "Software Engineer",
+            "req_experience": "0-2 yrs",
+            "link": "www.infosys.com",
+            "company_logo": "https://www.drupal.org/files/styles/grid-4-2x/public/infosys-logo-PNG.png?itok=aCLUpIQT",
+            "skill_vis_check": false,
+            "req_skills": "java, c, c++, python, UI, Backend",
+            "location": "blr",
+            "status": "open",
+            "job_type": "software"
+        },
+        {
+            "company_name": "de-shaw",
+            "position": "MTS",
+            "req_experience": "2-5 yrs",
+            "link": "www.infosys.com",
+            "company_logo": "https://freakydiodes.com/wp-content/uploads/2022/02/de-shaw-co.png",
+            "skill_vis_check": false,
+            "req_skills": "java, c, c++, python, UI, Backend",
+            "location": "noida",
+            "status": "open",
+            "job_type": "software"
+        },
+        {
+            "company_name": "amazon",
+            "position": "SDE1",
+            "req_experience": "0-2 yrs",
+            "link": "www.infosys.com",
+            "company_logo": "https://1000logos.net/wp-content/uploads/2016/10/Amazon-logo-meaning.jpg",
+            "skill_vis_check": false,
+            "req_skills": "java, c, c++, python, UI, Backend",
+            "location": "hyd",
+            "status": "open" ,
+            "job_type": "software"     
+        },
+        {
+            "company_name": "meta",
+            "position": "Software Engineer",
+            "req_experience": "5+ yrs",
+            "link": "www.infosys.com",
+            "company_logo": "https://static.dezeen.com/uploads/2021/11/meta-facebook-rebranding-name-news_dezeen_2364_col_hero2.jpg",
+            "skill_vis_check": false,
+            "req_skills": "java, c, c++, python, UI, Backend",
+            "location": "noida",
+            "status": "close",
+            "job_type": "software" 
+        }
+    ]
+}

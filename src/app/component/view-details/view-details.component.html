@@ -1,0 +1,154 @@
+
+<div id="view-details-header">
+    <div id="view-details-header-text">
+        <h1><b>{{view_in_header}}</b></h1>
+    <!-- <hr> -->
+    </div>
+</div>
+
+<div id="view-body">
+    <div id="show_grid" class="flex-container">
+        <div id="show_filters" class="flex-child">
+            <br>
+            <h1 class="h1filter"> &nbsp;&nbsp;&nbsp; <b> Filters </b></h1>
+            <!-- <button class="reset_filter" type="reset"  (click)="getButtonClick('reset')" > <b>reset filter</b></button> -->
+            <button class="reset_filter" type="reset"  (click)="resetFilter()" > <b>reset filter</b></button>
+            <hr>
+            <!-- <h2>&nbsp;&nbsp;Filter by Company</h2> -->
+            <div class="search-company">
+                <h2 class="company-text">&nbsp;&nbsp;&nbsp;&nbsp;Company</h2>
+                &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                <input class="form-control" type="text" name="search" placeholder="&#61442; Search by Company" 
+                list="get_company_name"  (change)="getCompany($event)" >
+                <datalist id="get_company_name">
+                    <option *ngFor="let item of available_company_name" [value]="item">{{item}}</option>
+                </datalist>
+            </div>
+            <hr>
+
+            <h2 class="type-text">&nbsp;&nbsp;&nbsp;&nbsp;Type</h2>
+
+            <div class="type-div">
+                <input type="checkbox" id="radio-type-software" name="software" (checked)="typesoftware = !typesoftware" 
+                (change)="check_type('software')">
+                <label for="software" id="radio-type-software" > Software </label>
+
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="checkbox" id="radio-type-finance" name="finance" (checked)="check_type('finance')"
+                (change)="check_type('finance')">
+                <label for="finance" id="radio-type-finance" > Finance </label><br>
+                
+                <input type="checkbox" id="radio-type-hr" name="hr" (checked)="check_type('hr')"
+                (change)="check_type('hr')">
+                <label for="hr" id="radio-type-hr" > HR </label>
+
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="checkbox" id="radio-type-govt" name="govt" (checked)="check_type('govt')"
+                (change)="check_type('govt')">
+                <label for="govt" id="radio-type-govt" > Govt </label>
+
+            </div>
+            <br><br>
+            <hr>
+
+            <h2 class="status-text">&nbsp;&nbsp;&nbsp;&nbsp;Status</h2>
+
+            <div class="status-div">
+                <!-- <input type="checkbox" id="check-status-all" name="all" value="All" (checked)="status_all = !status_all"
+                 (change)="check_status('all')">
+                <label for="All" id="check-status-software" > All</label> -->
+
+                <input type="checkbox" id="check-status-open" name="open" value="Open" (checked)="status_open = !status_open"
+                (change)="check_status('open')">
+                <label for="Open" id="check-status-finance" > Open </label>
+
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                <input type="checkbox" id="check-status-close" name="close" value="Close" (checked)="status_close = !status_close"
+                 (change)="check_status('close')">
+                <label for="Close" id="check-status-close" > Close </label><br>
+
+            </div>
+            <br><br>
+            <hr>
+
+            <div class="search-company">
+                <h2 class="company-text">&nbsp;&nbsp;&nbsp;&nbsp;Location</h2>
+                &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                <input class="form-control" type="text" name="search" autocomplete="off" 
+                placeholder="&#61442; Search by Location" list="get_location" (change)="getLocation($event)">
+                <datalist id="get_location">
+                    <option *ngFor="let location of available_location" [value]="location">{{location}}</option>
+                </datalist>
+            </div>
+
+            <div class="location-div">
+                &nbsp;&nbsp;&nbsp;
+                <input type="checkbox" id="check-location-india" name="NCR" value="india" (checked)="location_india = !location_india"
+                (change)="check_location('NCR')">
+                <label for="india" id="check-location-india" > NCR </label>
+
+                &nbsp;&nbsp;&nbsp;
+                <input type="checkbox" id="check-location-blr" name="blr" value="BLR" (checked)="location_blr = !location_blr"
+                (change)="check_location('blr')">
+                <label for="BLR" id="check-status-blr" > BLR </label>
+
+                &nbsp;&nbsp;&nbsp;
+                <input type="checkbox" id="check-status-hyd" name="hyd" value="HYD" (checked)="location_hyd = !location_hyd"
+                (change)="check_location('hyd')">
+                <label for="Close" id="check-status-hyd" > HYD </label>
+            </div>
+            <br><br><br><br>
+            <hr>
+            
+        </div>
+        <div class="flex-child">
+            <mat-grid-list cols="2" rowHeight="2:1" [gutterSize]="'17px'">
+                <mat-grid-tile id="mat-grid-show-elements" *ngFor="let x of currentPageData" >
+                    <div class="element-inside-grid" id="show_ele" >
+                        <table>
+                            <tr style="align-items: left;">
+                                <th width="100px">
+                                    <i id="icon" class="fas fa-briefcase"></i>
+                                    <h2> <b> {{x.company_name}} </b> <hr></h2>
+
+                                    {{x.position}}<br>
+                                    {{x.req_experience}}
+
+                                    <button id="apply-button" (click) ="getButtonClick(x.link)" > <b> APPLY </b></button>
+                                </th>
+                                <th>
+
+                                    <div style="margin-left: 30px; background-color: rgba(8, 243, 255, 0.118); border-radius: 10px;"
+                                     [hidden]="!x.skill_vis_check">
+                                        <b>skills required**</b> <br>
+                                        <b> {{x.req_skills}} </b>
+                                    </div>
+                                    
+                                    <div  (mouseover)="onMouseOver(x.company_name)" (mouseout)="onMouseOut(x.company_name)">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                         <img id="company_logo" [src]="x.company_logo" alt="" height="100" width="120"
+                                          [hidden]="x.skill_vis_check">
+                                    </div>
+                                    
+                                </th>
+                            </tr>
+                        </table>
+                        
+                        
+                    </div>
+                </mat-grid-tile>
+            </mat-grid-list>
+            <mat-paginator [length]="length"
+                [pageSize]="currentPageSize"
+                [pageSizeOptions]="pageSizeOptions"
+                (page)="onPageChange($event)"
+                aria-label="Select page">
+            </mat-paginator>
+        </div>
+        
+    </div>
+</div>
+
+
