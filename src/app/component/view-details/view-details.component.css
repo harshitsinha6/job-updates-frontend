@@ -8,13 +8,14 @@
 
 .flex-container {
     display: flex;
+    position: relative;
+    min-width: 1300px;
+    min-height: 1300px;
 }
 
 .flex-child {
     flex: 1;
     border: 2px;
-    /* min-width: 500px;
-    min-height: 500px; */
 }  
 
 .flex-child:first-child {
@@ -33,6 +34,7 @@
     background-color:rgba(173, 236, 202, 0.084);
     border-radius: 15px;
     max-height: 550px;
+    position: relative;
 }
 
 #mat-grid-show-elements {
@@ -49,7 +51,6 @@
     right: 5px;
     /* margin-left: 10%; */
     padding: 5px;
-    margin-top: 0px;
 }
 
 #apply-button {
@@ -108,16 +109,10 @@
     text-decoration-color: Blue;
 }
 
-#searchbycompany{
-    margin-top: 0%;
-}
-
 .form-control{
     border-radius: 5px;
-    margin-left: 0%;
     min-width: 270px;
     min-height: 20px;
-    margin-top: 0px;
 }
 
 .search-company{

@@ -103,17 +103,17 @@
             
         </div>
         <div class="flex-child">
-            <mat-grid-list cols="2" rowHeight="2:1" [gutterSize]="'17px'">
+            <mat-grid-list cols="2" rowHeight="2:1" [gutterSize]="'15px'">
                 <mat-grid-tile id="mat-grid-show-elements" *ngFor="let x of currentPageData" >
                     <div class="element-inside-grid" id="show_ele" >
                         <table>
                             <tr style="align-items: left;">
-                                <th width="100px">
+                                <th width="160px">
                                     <i id="icon" class="fas fa-briefcase"></i>
                                     <h2> <b> {{x.company_name}} </b> <hr></h2>
 
-                                    {{x.position}}<br>
-                                    {{x.req_experience}}
+                                    {{x.position}} <br>
+                                    {{x.req_experience}} <br>
 
                                     <button id="apply-button" (click) ="getButtonClick(x.link)" > <b> APPLY </b></button>
                                 </th>
@@ -122,12 +122,12 @@
                                     <div style="margin-left: 30px; background-color: rgba(8, 243, 255, 0.118); border-radius: 10px;"
                                      [hidden]="!x.skill_vis_check">
                                         <b>skills required**</b> <br>
-                                        <b> {{x.req_skills}} </b>
+                                        <b> {{x.req_skills}} </b> 
                                     </div>
                                     
                                     <div  (mouseover)="onMouseOver(x.company_name)" (mouseout)="onMouseOut(x.company_name)">
                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;
                                          <img id="company_logo" [src]="x.company_logo" alt="" height="100" width="120"
                                           [hidden]="x.skill_vis_check">
                                     </div>

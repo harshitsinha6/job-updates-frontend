@@ -24,6 +24,7 @@ export class ViewDetailsComponent implements OnInit {
   typehr: boolean = false;
   typefinance: boolean = false;
   typesoftware: boolean = false;
+  typegovt: boolean = false;
 
   currentLocation = "";
 
@@ -53,7 +54,7 @@ export class ViewDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.my_data = [];
-    if(this.typehr || this.typefinance || this.typesoftware || this.status_open || this.status_close || 
+    if(this.typehr || this.typegovt || this.typefinance || this.typesoftware || this.status_open || this.status_close || 
       this.selected_location.length > 0 || this.selected_company !== ""){
       this.is_filter_applied = true;
     }
@@ -378,6 +379,16 @@ export class ViewDetailsComponent implements OnInit {
       }
       else{
         this.selected_job_type.push("hr");
+      }
+    }
+    else if(job_type == "govt"){
+      this.typegovt = !this.typegovt;
+      if(this.typehr == false && this.selected_job_type.indexOf("govt") > -1){
+        const index = this.selected_job_type.indexOf("govt");
+        this.selected_job_type.splice(index, 1);
+      }
+      else{
+        this.selected_job_type.push("govt");
       }
     }
     this.ngOnInit();
