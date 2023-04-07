@@ -341,12 +341,6 @@ export class ViewDetailsComponent implements OnInit {
     }
   }
 
-
-  generateQuery(){
-    // to make the query according to filter
-    
-  }
-
   check_type(job_type: any){
     if(job_type == 'software')
     {

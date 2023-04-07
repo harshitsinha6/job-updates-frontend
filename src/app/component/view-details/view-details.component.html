@@ -10,6 +10,7 @@
     <div id="show_grid" class="flex-container">
         <div id="show_filters" class="flex-child">
             <br>
+            
             <h1 class="h1filter"> &nbsp;&nbsp;&nbsp; <b> Filters </b></h1>
             <!-- <button class="reset_filter" type="reset"  (click)="getButtonClick('reset')" > <b>reset filter</b></button> -->
             <button class="reset_filter" type="reset"  (click)="resetFilter()" > <b>reset filter</b></button>
@@ -102,14 +103,17 @@
             <hr>
             
         </div>
-        <div class="flex-child">
+        <div class="flex-child" id="show_jobs">
             <mat-grid-list cols="2" rowHeight="2:1" [gutterSize]="'15px'">
                 <mat-grid-tile id="mat-grid-show-elements" *ngFor="let x of currentPageData" >
                     <div class="element-inside-grid" id="show_ele" >
                         <table>
                             <tr style="align-items: left;">
                                 <th width="160px">
-                                    <i id="icon" class="fas fa-briefcase"></i>
+                                    <!-- <i id="icon" class="fas fa-briefcase"></i> -->
+
+                                    <mat-icon>work</mat-icon>
+
                                     <h2> <b> {{x.company_name}} </b> <hr></h2>
 
                                     {{x.position}} <br>
@@ -119,18 +123,34 @@
                                 </th>
                                 <th>
 
+                                    <!-- 
                                     <div style="margin-left: 30px; background-color: rgba(8, 243, 255, 0.118); border-radius: 10px;"
                                      [hidden]="!x.skill_vis_check">
                                         <b>skills required**</b> <br>
                                         <b> {{x.req_skills}} </b> 
                                     </div>
                                     
-                                    <div  (mouseover)="onMouseOver(x.company_name)" (mouseout)="onMouseOut(x.company_name)">
+                                    <div (mouseover)="onMouseOver(x.company_name)" (mouseout)="onMouseOut(x.company_name)">
                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                         &nbsp;&nbsp;&nbsp;
                                          <img id="company_logo" [src]="x.company_logo" alt="" height="100" width="120"
-                                          [hidden]="x.skill_vis_check">
+                                          [hidden]="x.skill_vis_check" style="transition: 2s;">
                                     </div>
+                                    -->
+
+                                    <div class="flip-card">
+                                        <div class="flip-card-inner">
+                                          <div class="flip-card-front">
+                                            <img [src]="x.company_logo" alt="Avatar" style="width:120px;height:160px;">
+                                          </div>
+                                          <div class="flip-card-back">
+                                            <div style="margin-left: 30px; background-color: rgba(8, 243, 255, 0.118); border-radius: 10px;">
+                                                    <b>skills required**</b> <br>
+                                                    <b> {{x.req_skills}} </b> 
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
                                     
                                 </th>
                             </tr>
