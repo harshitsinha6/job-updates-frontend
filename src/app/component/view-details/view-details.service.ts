@@ -8,8 +8,8 @@ import { Observable } from 'rxjs';
 })
 export class ViewDetailsService {
 
-  filteredURI: any = "http://44.193.30.70:8181/api/get-filtered-jobs/";
-  URI: any = "http://44.193.30.70:8181/api/get-jobs/";
+  filteredURI: any = "http://44.193.30.70:8000/api/get-filtered-jobs/";
+  URI: any = "http://44.193.30.70:8000/api/get-jobs/";
 
   constructor(private http: HttpClient) { }
 
@@ -30,6 +30,7 @@ export class ViewDetailsService {
       "iscompanyJobTypePresent": true,
       "jobType": jobType
     }
+    
     return this.http.post(this.filteredURI+pageNumber+"/"+pageSize, body);
   }
 
