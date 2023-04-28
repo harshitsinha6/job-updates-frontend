@@ -4,6 +4,7 @@
     background-color:rgba(8, 22, 215, 0.989);
     text-align: center;
     max-height: 40px;
+    width: 100%;
 }
 
 .flex-container {
