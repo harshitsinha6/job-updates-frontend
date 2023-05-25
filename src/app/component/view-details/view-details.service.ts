@@ -8,8 +8,8 @@ import { Observable } from 'rxjs';
 })
 export class ViewDetailsService {
 
-  filteredURI: any = "http://3.227.12.172:8181/api/get-filtered-jobs/";
-  URI: any = "http://3.227.12.172:8181/api/get-jobs/";
+  filteredURI: any = "http://3.228.8.50:8181/api/get-filtered-jobs/";
+  URI: any = "http://3.228.8.50:8181/api/get-jobs/";
 
   constructor(private http: HttpClient) { }
 

@@ -79,6 +79,7 @@ export class ViewDetailsComponent implements OnInit {
     this.length = this.my_data.length;
 
     this.available_company_name = [...new Set(this.available_company_name)];
+    this.my_data = this.my_data.reverse();
     
   }
 
