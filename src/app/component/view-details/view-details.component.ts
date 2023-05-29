@@ -10,7 +10,7 @@ import {MatPaginatorModule, PageEvent} from '@angular/material/paginator';
 })
 export class ViewDetailsComponent implements OnInit {
 
-  view_in_header = "Job Updates"
+  view_in_header = "Opportunity Ocean"
 
   length = 0;
   pageSize = 6;
